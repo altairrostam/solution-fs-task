@@ -6,6 +6,7 @@ from .models import Email
 from .serializers import GetEmailSerializer,PatchEmailSerializer
 
 
+
 class EmailList(APIView):
     def get(self, request, format=None):
         try:
@@ -28,9 +29,14 @@ class EmailList(APIView):
 class EmailDetail(APIView):
     def get_object(self, idEmail):
         try:
-            return Email.objects.get(idEmail=idEmail)
+            return Email.objects.get(id=idEmail)
         except Email.DoesNotExist:
             raise Http404
+    def get(self,request, idEmail):
+        email = self.get_object(idEmail)
+        serializer = GetEmailSerializer(email)
+        return Response(serializer.data)
+
     def patch(self,request,idEmail,format=None):
         email = self.get_object(request.data['idEmail'])
         serializer = PatchEmailSerializer(email,

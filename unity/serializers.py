@@ -17,4 +17,4 @@ class GetEmailSerializer(serializers.ModelSerializer):
 class PatchEmailSerializer(serializers.ModelSerializer):
     class Meta:
         model=Email
-        fields=['status']
+        fields=['id','emailId','status']

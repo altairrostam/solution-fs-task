@@ -1,56 +1,93 @@
-# Product Engineer at Konigle 
-Thank you for interviewing with us! Konigle is a collection of tools to help an online store scale. These tools help an online store save time, reduce costs and increase sales, hence improve their profitability. 
+## Installation
+1. Clone the repository
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+2. Open project folder
+```sh
+    cd solution-fs-task
+```
+3. Create a virtual environment
+``` sh
+    python3 -m venv env
+4. Activate virtual environment
+```
+    source ./env/bin/activate 
+    # On Windows use `env\Scripts\activate`
+```
+5. Install packages
+```
+    pip -r requirements.txt
+```
+6. Migrate database
+```
+    python manage.py migrate
+```
+7. Set up super user (to view admin site). Note: Email and username is arbitrary
+```
+    python manage.py createsuperuser --email admin@example.com --username admin
+```
+8.
+# This is a Heading h1
+## This is a Heading h2 
+###### This is a Heading h6
 
-Konigle is a complex product being shipped at very high velocity to solve urgent and important needs for online stores. To help us ship fast, we have architected our product around a tech stack that is simple and well understood. Konigle is a web first product and each seller tool inside Konigle is a Django application with it's own data models and simple UI. 
+## Emphasis
 
-As a full stack engineer, you would have an opportunity to build, maintain and scale complete seller tools. In order to give you a feel of the actual work that you will be doing, this task in itself is a hypothetical toy seller tool that should take you not more than 4 hours to prototype. Let's call this 
-seller tool --> *Unity*
+*This text will be italic*  
+_This will also be italic_
 
-## Unity
-Creating an email list with consent to target with promotional emails is a cost effective way to increase sales. Infact, studies have shown that email
-marketing has ~42000% ROI. Unity is a simple seller tool that helps an online store maintain an email list. It consists of a widget installed an online store and a Django application which will provide the ability to manage these new customers.
+**This text will be bold**  
+__This will also be bold__
 
-![Seller Tool](cac-widget.png)
+_You **can** combine them_
 
-Here is the brief functionality of the seller tool
-- A widget pops up on the online store and prompts the store visitor to signup using email address
-- The signup data will be sent to an API provided by the Django app (Unity backend)
-- The app stores the data in its own model
-- The app exposes a view which 
-	1.  lists down the emails in the reverse chronological order of their  timestamp
-	2. Shows the number of new emails in the current calendar month
-- The app sends an email to the seller every Monday and Wednesday including the statistics around the email list
+## Lists
 
-## Task
-Build a Django application with following functionalities
-1. Exposes an API to store the emails. Feel free to use Django REST Framework
-2. A view to list down the emails in the reverse chronological order and show the number of new emails added this calendar month
-3. Integrate the api with the email collection widget present in this project.
-3. Bonus - setup a celery task that runs every Monday and Wednesday and prints the number of new emails added in the current calendar month to the console.
+### Unordered
 
- _NOTES_
- - The widget itself sits on seller's online store (3rd party site) and sends data to your app (Konigle). The API is public but we don't want anyone to misuse it.
+* Item 1
+* Item 2
+* Item 2a
+* Item 2b
 
-## Steps
-1. Download the attached zip file which is a git repo. The repo already contains the following
-    - `widgets` - a Javascript project for creating the widget. This includes the webpack based toolchain to generate the widget's JS file. If you are not comfortable with all these, don't worry about it.
-    - `static/js/e-widgets.v1.min.js` - The widget's javascript file to be included in the seller's online store. You need to configure your Django project to serve this static file to any online store.
-    - `widgets/test/store.html` - A test HTML file which includes the widget. 
-2. Create a Django project inside the repo.
-3. Create Django app with name - unity.
-4. Create a data model to store the emails.
-5. Expose an REST API to be used by the widget to submit the email data.
-6. Create a Django view for listing the emails. As shown in the figma file for reference : https://www.figma.com/file/CYhfwmtEK4Xm7ZsNM6Swej/Unity?node-id=0%3A1
-7. Bonus - Create a celery periodic task that does what is specified above
+### Ordered
 
-## Submission
-Zip the working repo and email us
+1. Item 1
+1. Item 2
+1. Item 3
+  1. Item 3a
+  1. Item 3b
 
-**OR**
+## Images
 
-Push it to your own git repo and share a link. This way you have a useful, working project against your profile!
+![This is a alt text.](/image/sample.png "This is a sample image.")
 
+## Links
 
+You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
 
+## Blockquotes
 
+> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
+>
+>> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
 
+## Tables
+
+| Left columns  | Right columns |
+| ------------- |:-------------:|
+| left foo      | right foo     |
+| left bar      | right bar     |
+| left baz      | right baz     |
+
+## Blocks of code
+
+```
+let message = 'Hello world';
+alert(message);
+```
+
+## Inline code
+
+This web site is using `markedjs/marked`.
