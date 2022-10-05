@@ -18,7 +18,7 @@
     ```
 5. Install packages
     ```sh
-    pip -r requirements.txt
+    pip install -r requirements.txt
     ```
 6. Migrate database
     ```sh
