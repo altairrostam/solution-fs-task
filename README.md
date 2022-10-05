@@ -1,7 +1,7 @@
 # Installation
 1. Clone the repository
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/altairrostam/solution-fs-task.git
    ```
 2. Open project folder
     ```sh
