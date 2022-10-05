@@ -36,6 +36,7 @@
     ```sh
     python manage.py runserver
     ```
+    The project will be live on http://localhost:8000
 # Main sites
 There are 4 main sites you can access : Dashboard, Store, Admin, and Browsable API site by Django Rest Framework
 
